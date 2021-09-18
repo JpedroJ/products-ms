@@ -23,14 +23,11 @@ public class ProductService {
 	public ResponseEntity<List<Product>> findAll() {
 		return ResponseEntity.ok().body(productRepository.findAll());
 	}
-	
+
 	public List<Product> searchProducts(String description, Double min_price, Double max_price) {
 
-		
-		
 		return productRepository.search(description, min_price, max_price);
 	}
-
 
 	public ResponseEntity<Product> findById(String id) {
 

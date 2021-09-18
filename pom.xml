@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.alura</groupId>
-	<artifactId>desafioProducts</artifactId>
+	<artifactId>products-ms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>desafioProducts</name>
+	<name>products-ms</name>
 	<description>Desafio da compasso</description>
 	<properties>
 		<java.version>11</java.version>

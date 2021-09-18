@@ -51,14 +51,10 @@ public class ProductsController {
 	public ResponseEntity<Product> updateProduct(@PathVariable("id") String id, @RequestBody @Valid Product product) {
 		return productService.update(product, id);
 	}
-	
+
 	@GetMapping(path = "/search")
-	public List<Product> search(
-			@RequestParam(required = false) String q,
-			@RequestParam(required = false) Double min_price,
-			@RequestParam(required = false) Double max_price) {
-		
-		//Collection<Product> listProducts = productService.search(q, min_price, max_price);
+	public List<Product> search(@RequestParam(required = false) String q,
+			@RequestParam(required = false) Double min_price, @RequestParam(required = false) Double max_price) {
 		return productService.searchProducts(q, min_price, max_price);
 	}
 

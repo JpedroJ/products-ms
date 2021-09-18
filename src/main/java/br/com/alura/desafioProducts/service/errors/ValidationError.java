@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-
 @RestControllerAdvice
 public class ValidationError {
 
@@ -23,22 +22,19 @@ public class ValidationError {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public Map<String, Object> handle(MethodArgumentNotValidException exception) {
 		Map<String, Object> errors = new HashMap<>();
-		
+
 		StringBuilder sb = new StringBuilder();
 		int status_code = HttpStatus.BAD_REQUEST.value();
-		
+
 		exception.getBindingResult().getFieldErrors().forEach(e -> {
-			sb.append("O campo " + e.getField()+ " "  + messageSource.getMessage(e, LocaleContextHolder.getLocale()));
-			if(exception.getBindingResult().getErrorCount() > 1) {
+			sb.append("O campo " + e.getField() + " " + messageSource.getMessage(e, LocaleContextHolder.getLocale()));
+			if (exception.getBindingResult().getErrorCount() > 1) {
 				sb.append("; ");
 			}
 		});
 		errors.put("status_code", status_code);
 		errors.put("message", sb);
 
-		
-	
-		
 		return errors;
 	}
 }
