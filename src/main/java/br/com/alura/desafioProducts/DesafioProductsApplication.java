@@ -1,4 +1,4 @@
-package br.com.alura.desafioProducts;
+package br.com.alura.desafioproducts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

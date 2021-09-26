@@ -1,4 +1,4 @@
-package br.com.alura.desafioProducts.config;
+package br.com.alura.desafioproducts.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
